@@ -1,4 +1,5 @@
 import '../app/globals.css'
+import 'aws-amplify'
 import { Amplify, Hub, Auth } from "aws-amplify"
 
 Amplify.configure({
