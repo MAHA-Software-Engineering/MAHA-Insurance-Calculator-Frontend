@@ -147,38 +147,42 @@ export default function VehicleFetcher() {
   ]);
 
   return (
-    <div className="container p-5 mx-auto">
-      <div className="flex flex-col w-auto px-8 pt-6 pb-8 m-20 my-2 mb-4 text-black bg-white rounded shadow-md">
-        <h2 className="text-[#832C31] text-lg font-bold mb-5">
-          Get Vehicle Information
-        </h2>
-        <VehicleForm fetchData={fetchData} />
-        {isLoading && <CircularDeterminate />}
-        {errorMessage && (
-          <p className="text-[#832C31] text-center mt-5">{errorMessage}</p>
-        )}
-        <VehicleImage scrapedData={scrapedData} />
-        {hasFetchedData && (
-          <>
-            {data.insuranceRate && (
-              <div className="mt-4">
-                <h3 className="text-lg font-semibold">Insurance Rate</h3>
-                <p>{data.insuranceRate}</p>
-              </div>
-            )}
-            <div className="flex justify-between mt-2">
-              <VehicleRatings
-                ratings={data.ratings}
-                onSelectCar={handleSelectCar}
-              />
-              <VehicleRecalls
-                recalls={data.recalls}
-                activeRecallTab={activeRecallTab}
-                handleRecallTabChange={handleRecallTabChange}
-              />
-            </div>
-          </>
-        )}
+    <div className="flex flex-col text-black bg-white rounded">
+      <h2 className="text-[#832C31] text-lg font-bold mb-5">
+        Get Vehicle Information
+      </h2>
+      <div className="flex">
+        <div className="flex flex-col flex-1">
+          <VehicleForm fetchData={fetchData} />
+          {hasFetchedData && (
+            <>
+              {data.insuranceRate && (
+                <div className="mt-4">
+                  <h3 className="text-lg font-semibold">Insurance Rate</h3>
+                  <p>{data.insuranceRate}</p>
+                </div>
+              )}
+            </>
+          )}
+          {isLoading && <CircularDeterminate />}
+          {errorMessage && (
+            <p className="text-[#832C31] text-center mt-5">{errorMessage}</p>
+          )}
+          <VehicleImage scrapedData={scrapedData} />
+        </div>
+        <div className="flex-1">
+          <VehicleRatings
+            ratings={data.ratings}
+            onSelectCar={handleSelectCar}
+          />
+        </div>
+        <div className="flex-1">
+          <VehicleRecalls
+            recalls={data.recalls}
+            activeRecallTab={activeRecallTab}
+            handleRecallTabChange={handleRecallTabChange}
+          />
+        </div>
       </div>
     </div>
   );
