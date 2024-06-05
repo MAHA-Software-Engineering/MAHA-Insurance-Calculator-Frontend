@@ -5,7 +5,7 @@ const RatingField = ({ label, value }) => (
 );
 
 const RatingInfoBox = ({ ratingField }) => (
-  <div className="border border-gray-300 rounded p-4 my-2">
+  <div className="p-4 my-2 border border-gray-300 rounded">
     <h2 className="text-lg font-semibold">
       Vehicle: {ratingField.VehicleDescription}
     </h2>
@@ -36,7 +36,7 @@ const RatingInfoBox = ({ ratingField }) => (
 );
 
 const VehicleRatings = ({ ratings, onSelectCar }) => (
-  <div className="w-1/2 pr-2">
+  <>
     <h2 className="text-lg font-semibold">Rating Information</h2>
     {ratings.map((ratingField, index) => (
       <div
@@ -47,7 +47,7 @@ const VehicleRatings = ({ ratings, onSelectCar }) => (
         <RatingInfoBox ratingField={ratingField} />
       </div>
     ))}
-  </div>
+  </>
 );
 
 export default VehicleRatings;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const RecallInfoBox = ({ recallItem }) => (
-  <div className="border border-gray-300 rounded p-4 my-2">
+  <div className="p-4 my-2 border border-gray-300 rounded">
     <h2 className="text-lg font-semibold">Component: {recallItem.Component}</h2>
     <p className="text-base">Summary: {recallItem.Summary}</p>
     <p className="text-sm">Consequence: {recallItem.Consequence}</p>
@@ -17,10 +17,10 @@ const VehicleRecalls = ({ recalls, handleRecallTabChange }) => {
   }, [recalls]);
 
   return (
-    <div className="w-1/2 pl-2">
+    <>
       {recalls.length > 0 ? (
         <>
-          <div className="overflow-auto flex flex-col">
+          <div className="flex flex-col overflow-auto">
             {recalls.map((recall, index) => (
               <button
                 key={index}
@@ -48,7 +48,7 @@ const VehicleRecalls = ({ recalls, handleRecallTabChange }) => {
       ) : (
         <p>No recall information available.</p>
       )}
-    </div>
+    </>
   );
 };
 
