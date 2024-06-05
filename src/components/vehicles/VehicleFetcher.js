@@ -148,10 +148,7 @@ export default function VehicleFetcher() {
 
   return (
     <div className="container p-5 mx-auto">
-      <div
-        className="flex flex-col px-8 pt-6 pb-8 my-2 mb-4 text-black bg-white rounded shadow-md"
-        style={{ padding: "50px 20px", width: "auto", margin: "20px auto" }}
-      >
+      <div className="flex flex-col w-auto px-8 pt-6 pb-8 m-20 my-2 mb-4 text-black bg-white rounded shadow-md">
         <h2 className="text-[#832C31] text-lg font-bold mb-5">
           Get Vehicle Information
         </h2>
