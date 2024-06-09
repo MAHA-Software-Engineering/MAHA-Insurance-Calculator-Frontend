@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 
 const RecallInfoBox = ({ recallItem }) => (
   <div className="p-4 border border-gray-300 rounded">
-    <h2 className="text-lg font-semibold">Component: {recallItem.Component}</h2>
+    <div className="text-lg font-semibold">
+      Component: {recallItem.Component}
+    </div>
     <p className="text-base">Summary: {recallItem.Summary}</p>
     <p className="text-sm">Consequence: {recallItem.Consequence}</p>
     <p className="text-sm">Remedy: {recallItem.Remedy}</p>
@@ -24,7 +26,9 @@ const VehicleRecalls = ({ recalls, handleRecallTabChange }) => {
 
   return (
     <>
-      <h2 className="mb-2 text-lg font-semibold text-center">Recall Details</h2>
+      <div className="mb-2 text-lg font-semibold text-center">
+        Recall Details
+      </div>
       {recalls.length > 0 ? (
         <>
           <select onChange={handleSelectChange} value={activeRecallTab}>

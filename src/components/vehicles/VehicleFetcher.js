@@ -148,9 +148,9 @@ export default function VehicleFetcher() {
 
   return (
     <div className="flex flex-col text-black bg-white rounded">
-      <h2 className="text-[#832C31] text-lg font-bold mb-5">
+      <div className="text-[#832C31] text-lg font-bold mb-5 text-center">
         Get Vehicle Information
-      </h2>
+      </div>
       <div className="flex">
         <div className="flex flex-col flex-1">
           <VehicleForm fetchData={fetchData} />

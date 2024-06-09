@@ -9,7 +9,7 @@ const TeamMemberCard = ({ imgSrc, altText, memberName, memberDescription }) => (
       className="object-cover w-32 h-32 mx-auto rounded-full"
     />
     <div className="mt-3 text-center">
-      <h2 className="text-xl font-semibold text-black">{memberName}</h2>
+      <div className="text-xl font-semibold text-black">{memberName}</div>
       <p className="text-sm text-black">{memberDescription}</p>
     </div>
   </div>
@@ -28,7 +28,7 @@ function AboutPage() {
       >
         <div className="flex items-center h-full bg-gray-800 bg-opacity-50">
           <div className="w-full text-center text-white">
-            <h1 className="text-3xl font-bold">Team MAHA</h1>
+            <div className="text-3xl font-bold">Team MAHA</div>
             <p className="px-3">
               MAHA is an acronym representing the union of its four foundational
               members-- Matt, Alem, Hooghir and Antonio. Matt, the maestro,

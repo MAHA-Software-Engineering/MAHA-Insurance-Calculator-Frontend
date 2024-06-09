@@ -98,9 +98,9 @@ function AdminPage() {
 
   return (
     <div className="container p-4 mx-auto">
-      <h1 className="mb-4 text-xl font-bold text-center">
+      <div className="mb-4 text-xl font-bold text-center">
         Admin Insurance Parameters
-      </h1>
+      </div>
       <div className="flex items-center justify-between mb-2 font-bold text-black">
         <span className="w-1/3">Insurance Factor</span>
         <span className="w-1/3 text-center">Current Value</span>

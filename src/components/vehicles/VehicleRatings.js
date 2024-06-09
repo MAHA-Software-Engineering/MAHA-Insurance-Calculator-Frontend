@@ -5,10 +5,10 @@ const RatingField = ({ label, value }) => (
 );
 
 const RatingInfoBox = ({ ratingField }) => (
-  <div className="p-4 my-2 border border-gray-300 rounded">
-    <h2 className="text-lg font-semibold">
+  <div className="p-4 border border-gray-300 rounded">
+    <div className="text-lg font-semibold">
       Vehicle: {ratingField.VehicleDescription}
-    </h2>
+    </div>
     {ratingField.MSRP && <RatingField label="MSRP" value={ratingField.MSRP} />}
     <RatingField label="Overall Rating" value={ratingField.OverallRating} />
     <RatingField
@@ -37,12 +37,14 @@ const RatingInfoBox = ({ ratingField }) => (
 
 const VehicleRatings = ({ ratings, onSelectCar }) => (
   <>
-    <h2 className="text-lg font-semibold">Rating Information</h2>
+    <div className="mb-2 text-lg font-semibold text-center">
+      Rating Information
+    </div>
     {ratings.map((ratingField, index) => (
       <div
         key={index}
         onClick={() => onSelectCar(index)}
-        style={{ cursor: "pointer" }}
+        className="cursor-pointer"
       >
         <RatingInfoBox ratingField={ratingField} />
       </div>

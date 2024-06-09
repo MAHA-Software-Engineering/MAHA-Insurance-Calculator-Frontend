@@ -1,5 +1,5 @@
 function AccountPage() {
-  return <h1 className="text-black">AccountPage</h1>;
+  return <div className="text-black">AccountPage</div>;
 }
 
 export default AccountPage;
