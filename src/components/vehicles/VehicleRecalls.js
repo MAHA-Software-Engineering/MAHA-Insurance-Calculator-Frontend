@@ -31,13 +31,15 @@ const VehicleRecalls = ({ recalls, handleRecallTabChange }) => {
       </div>
       {recalls.length > 0 ? (
         <>
-          <select onChange={handleSelectChange} value={activeRecallTab}>
-            {recalls.map((recall, index) => (
-              <option key={index} value={index}>
-                {recall.Component}
-              </option>
-            ))}
-          </select>
+          <div className="flex justify-center">
+            <select onChange={handleSelectChange} value={activeRecallTab}>
+              {recalls.map((recall, index) => (
+                <option key={index} value={index}>
+                  {recall.Component}
+                </option>
+              ))}
+            </select>
+          </div>
           {recalls[activeRecallTab] && (
             <div className="pt-3">
               <RecallInfoBox recallItem={recalls[activeRecallTab]} />
