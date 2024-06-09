@@ -8,9 +8,6 @@ const RatingField = ({ label, value }) => (
 
 const RatingInfoBox = ({ ratingField }) => (
   <div className="p-4 border border-gray-300 rounded">
-    <div className="text-lg font-semibold">
-      Vehicle: {ratingField.VehicleDescription}
-    </div>
     {ratingField.MSRP && <RatingField label="MSRP" value={ratingField.MSRP} />}
     <RatingField label="Overall Rating" value={ratingField.OverallRating} />
     <RatingField
