@@ -159,14 +159,14 @@ export default function VehicleFetcher() {
               {data.insuranceRate && (
                 <div className="mt-4">
                   <h3 className="text-lg font-semibold">Insurance Rate</h3>
-                  <p>{data.insuranceRate}</p>
+                  <div>{data.insuranceRate}</div>
                 </div>
               )}
             </>
           )}
           {isLoading && <CircularDeterminate />}
           {errorMessage && (
-            <p className="text-[#832C31] text-center mt-5">{errorMessage}</p>
+            <div className="text-[#832C31] text-center mt-5">{errorMessage}</div>
           )}
           <VehicleImage scrapedData={scrapedData} />
         </div>

@@ -1,7 +1,7 @@
 const RatingField = ({ label, value }) => (
-  <p className="text-sm">
+  <div className="text-sm">
     {label}: {value}
-  </p>
+  </div>
 );
 
 const RatingInfoBox = ({ ratingField }) => (

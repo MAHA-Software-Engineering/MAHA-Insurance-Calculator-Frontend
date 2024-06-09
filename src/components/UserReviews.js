@@ -20,19 +20,19 @@ const UserReviews = ({
         {reviews.length > 0 ? (
           reviews.map((review, index) => (
             <div key={index} className="p-4 mb-4">
-              <p className="font-bold">{review.username}</p>
+              <div className="font-bold">{review.username}</div>
               <ReactStars
                 value={review.stars}
                 edit={false}
                 size={24}
                 activeColor="#ffd700"
               />
-              <p>{review.reviewContent}</p>
-              <p className="text-sm">{review.datePosted}</p>
+              <div>{review.reviewContent}</div>
+              <div className="text-sm">{review.datePosted}</div>
             </div>
           ))
         ) : (
-          <p className="py-4 text-center">No reviews yet.</p>
+          <div className="py-4 text-center">No reviews yet.</div>
         )}
       </div>
 

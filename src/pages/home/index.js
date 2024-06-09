@@ -38,18 +38,18 @@ function HomePage() {
     <div className="w-full">
       <div className="flex flex-col md:flex-row items-center justify-center h-[calc(100vh-100px)] p-0 m-0">
         <div className="mr-4 text-black">
-          <p className="text-4xl font-bold underline">
+          <div className="text-4xl font-bold underline">
             MAHA Insurance Calculator
-          </p>
-          <p>
+          </div>
+          <div>
             We&apos;ll get you where you want to go, with rates that keep you
             moving forward!
-          </p>
+          </div>
           <div className="pr-4 mt-5 mr-3">
-            <p className="text-black">
+            <div className="text-black">
               Average User Rating: {calculateAverageReviews(reviews).toFixed(1)}
               {renderStars(calculateAverageReviews(reviews))}
-            </p>
+            </div>
           </div>
           <div className="mt-2">
             <Link

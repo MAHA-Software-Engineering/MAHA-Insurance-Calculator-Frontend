@@ -92,7 +92,7 @@ function AdminPage() {
   if (isLoading)
     return (
       <div className="container p-4 mx-auto text-center">
-        <p>Loading...</p>
+        <div>Loading...</div>
       </div>
     );
 

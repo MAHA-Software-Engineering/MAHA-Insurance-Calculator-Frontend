@@ -5,9 +5,9 @@ const RecallInfoBox = ({ recallItem }) => (
     <div className="text-lg font-semibold">
       Component: {recallItem.Component}
     </div>
-    <p className="text-base">Summary: {recallItem.Summary}</p>
-    <p className="text-sm">Consequence: {recallItem.Consequence}</p>
-    <p className="text-sm">Remedy: {recallItem.Remedy}</p>
+    <div className="text-base">Summary: {recallItem.Summary}</div>
+    <div className="text-sm">Consequence: {recallItem.Consequence}</div>
+    <div className="text-sm">Remedy: {recallItem.Remedy}</div>
   </div>
 );
 
@@ -45,7 +45,7 @@ const VehicleRecalls = ({ recalls, handleRecallTabChange }) => {
           )}
         </>
       ) : (
-        <p>No recall information available.</p>
+        <div>No recall information available.</div>
       )}
     </>
   );

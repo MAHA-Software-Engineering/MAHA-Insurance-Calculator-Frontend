@@ -10,7 +10,7 @@ const TeamMemberCard = ({ imgSrc, altText, memberName, memberDescription }) => (
     />
     <div className="mt-3 text-center">
       <div className="text-xl font-semibold text-black">{memberName}</div>
-      <p className="text-sm text-black">{memberDescription}</p>
+      <div className="text-sm text-black">{memberDescription}</div>
     </div>
   </div>
 );
@@ -29,7 +29,7 @@ function AboutPage() {
         <div className="flex items-center h-full bg-gray-800 bg-opacity-50">
           <div className="w-full text-center text-white">
             <div className="text-3xl font-bold">Team MAHA</div>
-            <p className="px-3">
+            <div className="px-3">
               MAHA is an acronym representing the union of its four foundational
               members-- Matt, Alem, Hooghir and Antonio. Matt, the maestro,
               orchestrates project direction and ensuring all parts of the
@@ -42,7 +42,7 @@ function AboutPage() {
               ensures both client data and user privacy. Together, we have
               formed a cohesive and productive unit to ensure exellence in our
               craft.
-            </p>
+            </div>
           </div>
         </div>
       </div>
