@@ -20,7 +20,7 @@ const VehicleImage = ({ scrapedData }) => {
             <img
               src={scrapedData.imageUrl}
               alt="Car"
-              className="max-w-[80%] max-h-[300px] object-cover border-2 border-red-500"
+              className="max-h-[300px] object-cover rounded shadow"
             />
             <div className="image-hover-overlay" />
             {isHovered && (

@@ -3,6 +3,7 @@
   display: inline-block;
   cursor: pointer;
   overflow: hidden;
+  border-radius: 0.20rem;
 }
 
 .image-hover-overlay {
@@ -16,6 +17,7 @@
   transition:
     opacity 0.2s ease-in-out,
     background 0.2s ease-in-out;
+  border-radius: 0.20rem;
 }
 
 .image-hover-wrapper:hover .image-hover-overlay {
