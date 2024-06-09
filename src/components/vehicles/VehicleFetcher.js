@@ -152,7 +152,7 @@ export default function VehicleFetcher() {
         Get Vehicle Information
       </div>
       <div className="flex flex-col lg:flex-row">
-        <div className="flex flex-col items-center w-full mx-1 lg:w-2/12">
+        <div className="flex-col items-center flex-1 w-full mx-1 ">
           <VehicleForm fetchData={fetchData} />
           {hasFetchedData && (
             <>
