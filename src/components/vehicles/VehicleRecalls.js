@@ -45,7 +45,7 @@ const VehicleRecalls = ({ recalls, handleRecallTabChange }) => {
           )}
         </>
       ) : (
-        <div>No recall information available.</div>
+        <div className="text-center">No recall information available.</div>
       )}
     </>
   );

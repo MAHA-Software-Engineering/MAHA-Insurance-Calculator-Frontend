@@ -40,15 +40,19 @@ const VehicleRatings = ({ ratings, onSelectCar }) => (
     <div className="mb-2 text-lg font-semibold text-center">
       Rating Information
     </div>
-    {ratings.map((ratingField, index) => (
-      <div
-        key={index}
-        onClick={() => onSelectCar(index)}
-        className="cursor-pointer"
-      >
-        <RatingInfoBox ratingField={ratingField} />
-      </div>
-    ))}
+    {ratings.length > 0 ? (
+      ratings.map((ratingField, index) => (
+        <div
+          key={index}
+          onClick={() => onSelectCar(index)}
+          className="cursor-pointer"
+        >
+          <RatingInfoBox ratingField={ratingField} />
+        </div>
+      ))
+    ) : (
+      <div className="text-center">No rating information available.</div>
+    )}
   </>
 );
 

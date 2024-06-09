@@ -16,7 +16,7 @@ export default function VehicleForm({ fetchData }) {
     ...props
   }) => (
     <select
-      className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+      className="w-full p-3 leading-tight text-center text-gray-700 border-2 rounded appearance-none"
       value={value}
       onChange={onChange}
       disabled={disabled}
@@ -42,7 +42,9 @@ export default function VehicleForm({ fetchData }) {
 
   return (
     <>
-      <div className="mb-2 text-lg font-semibold text-center">Rating Information</div>
+      <div className="mb-2 text-lg font-semibold text-center">
+        Rating Information
+      </div>
       <SelectInput
         options={YEARS}
         value={year}

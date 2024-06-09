@@ -148,7 +148,7 @@ export default function VehicleFetcher() {
 
   return (
     <div className="flex flex-col text-black bg-white rounded">
-      <div className="text-[#832C31] text-lg font-bold mb-5 text-center">
+      <div className="text-[#832C31] text-lg font-bold my-5 text-center">
         Get Vehicle Information
       </div>
       <div className="flex">
