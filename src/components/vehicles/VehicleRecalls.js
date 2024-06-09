@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const RecallInfoBox = ({ recallItem }) => (
-  <div className="p-4 my-2 border border-gray-300 rounded">
+  <div className="p-4 border border-gray-300 rounded">
     <h2 className="text-lg font-semibold">Component: {recallItem.Component}</h2>
     <p className="text-base">Summary: {recallItem.Summary}</p>
     <p className="text-sm">Consequence: {recallItem.Consequence}</p>
@@ -16,31 +16,26 @@ const VehicleRecalls = ({ recalls, handleRecallTabChange }) => {
     setActiveRecallTab(0);
   }, [recalls]);
 
+  const handleSelectChange = (event) => {
+    const selectedIndex = event.target.value;
+    handleRecallTabChange(selectedIndex);
+    setActiveRecallTab(selectedIndex);
+  };
+
   return (
     <>
+      <h2 className="mb-2 text-lg font-semibold text-center">Recall Details</h2>
       {recalls.length > 0 ? (
         <>
-          <div className="flex flex-col overflow-auto">
+          <select onChange={handleSelectChange} value={activeRecallTab}>
             {recalls.map((recall, index) => (
-              <button
-                key={index}
-                onClick={() => {
-                  handleRecallTabChange(index);
-                  setActiveRecallTab(index);
-                }}
-                className={`py-2 rounded text-xs my-2 ${
-                  activeRecallTab === index ? "bg-[#cc6066]" : ""
-                }`}
-              >
+              <option key={index} value={index}>
                 {recall.Component}
-              </button>
+              </option>
             ))}
-          </div>
+          </select>
           {recalls[activeRecallTab] && (
             <div className="pt-3">
-              <h2 className="text-lg font-semibold">
-                Recall Details for {recalls[activeRecallTab].Component}
-              </h2>
               <RecallInfoBox recallItem={recalls[activeRecallTab]} />
             </div>
           )}
