@@ -152,7 +152,7 @@ export default function VehicleFetcher() {
         Get Vehicle Information
       </div>
       <div className="flex">
-        <div className="flex flex-col flex-1">
+        <div className="flex flex-col w-2/12">
           <VehicleForm fetchData={fetchData} />
           {hasFetchedData && (
             <>
@@ -166,7 +166,9 @@ export default function VehicleFetcher() {
           )}
           {isLoading && <CircularDeterminate />}
           {errorMessage && (
-            <div className="text-[#832C31] text-center mt-5">{errorMessage}</div>
+            <div className="text-[#832C31] text-center mt-5">
+              {errorMessage}
+            </div>
           )}
           <VehicleImage scrapedData={scrapedData} />
         </div>
