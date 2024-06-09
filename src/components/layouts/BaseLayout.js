@@ -3,7 +3,7 @@ import Navigation from "../ui/Navigation";
 
 function BaseLayout({ children }) {
   return (
-    <div className="bg-white min-h-screen">
+    <div className="min-h-screen bg-white">
       <Navigation />
       {children}
     </div>
