@@ -42,6 +42,7 @@ export default function VehicleForm({ fetchData }) {
 
   return (
     <>
+      <div className="mb-2 text-lg font-semibold text-center">Rating Information</div>
       <SelectInput
         options={YEARS}
         value={year}
