@@ -1,3 +1,5 @@
+import React, { useState, useEffect } from "react";
+
 const RatingField = ({ label, value }) => (
   <div className="text-sm">
     {label}: {value}
@@ -35,25 +37,46 @@ const RatingInfoBox = ({ ratingField }) => (
   </div>
 );
 
-const VehicleRatings = ({ ratings, onSelectCar }) => (
-  <>
-    <div className="mb-2 text-lg font-semibold text-center">
-      Rating Information
-    </div>
-    {ratings.length > 0 ? (
-      ratings.map((ratingField, index) => (
-        <div
-          key={index}
-          onClick={() => onSelectCar(index)}
-          className="cursor-pointer"
-        >
-          <RatingInfoBox ratingField={ratingField} />
-        </div>
-      ))
-    ) : (
-      <div className="text-center">No rating information available.</div>
-    )}
-  </>
-);
+const VehicleRatings = ({ ratings, onSelectCar }) => {
+  const [activeRatingTab, setActiveRatingTab] = useState(0);
+
+  useEffect(() => {
+    setActiveRatingTab(0);
+  }, [ratings]);
+
+  const handleSelectChange = (event) => {
+    const selectedIndex = event.target.value;
+    onSelectCar(selectedIndex);
+    setActiveRatingTab(selectedIndex);
+  };
+
+  return (
+    <>
+      <div className="mb-2 text-lg font-semibold text-center">
+        Rating Information
+      </div>
+      {ratings.length > 0 ? (
+        <>
+          <div className="flex justify-center">
+            <select onChange={handleSelectChange} value={activeRatingTab}>
+              {ratings.map((rating, index) => (
+                <option key={index} value={index}>
+                  {rating.VehicleDescription}
+                </option>
+              ))}
+            </select>
+          </div>
+          {ratings[activeRatingTab] && (
+            <div className="pt-3">
+              <RatingInfoBox ratingField={ratings[activeRatingTab]} />
+            </div>
+          )}
+        </>
+      ) : (
+        <div className="text-center">No rating information available.</div>
+      )}
+    </>
+  );
+};
 
 export default VehicleRatings;
