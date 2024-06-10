@@ -48,6 +48,7 @@ export default function VehicleFetcher() {
           ratings: response.data.ratings,
           insuranceRate: "",
         });
+        setSelectedCarIndex(0);
         setHasFetchedData(true);
       }
     } catch (error) {
@@ -154,16 +155,11 @@ export default function VehicleFetcher() {
       <div className="flex flex-col lg:flex-row">
         <div className="flex-col items-center flex-1 w-full px-1">
           <VehicleForm fetchData={fetchData} />
-          {hasFetchedData && (
-            <>
-              {data.insuranceRate && (
-                <div className="mt-4">
-                  <h3 className="text-lg font-semibold">Insurance Rate</h3>
-                  <div>{data.insuranceRate}</div>
-                </div>
-              )}
-            </>
-          )}
+          <div className="mt-4">
+            <div className="font-bold text-center">
+              {data.insuranceRate || "Perform a search to get insurance rate."}
+            </div>
+          </div>
           {isLoading ? (
             <CircularDeterminate />
           ) : (
