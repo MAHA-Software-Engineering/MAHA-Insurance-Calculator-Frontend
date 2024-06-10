@@ -9,10 +9,9 @@ export default function CircularDeterminate() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "100vh",
       }}
     >
-      <CircularProgress size={130} />
+      <CircularProgress size={60} />
     </Box>
   );
 }
