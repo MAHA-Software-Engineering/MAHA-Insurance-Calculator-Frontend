@@ -152,7 +152,7 @@ export default function VehicleFetcher() {
         Get Vehicle Information
       </div>
       <div className="flex flex-col lg:flex-row">
-        <div className="flex-col items-center flex-1 w-full mx-1 ">
+        <div className="flex-col items-center flex-1 w-full px-1">
           <VehicleForm fetchData={fetchData} />
           {hasFetchedData && (
             <>
@@ -164,13 +164,16 @@ export default function VehicleFetcher() {
               )}
             </>
           )}
-          {isLoading && <CircularDeterminate />}
+          {isLoading ? (
+            <CircularDeterminate />
+          ) : (
+            <VehicleImage scrapedData={scrapedData} />
+          )}
           {errorMessage && (
             <div className="text-[#832C31] text-center mt-5">
               {errorMessage}
             </div>
           )}
-          <VehicleImage scrapedData={scrapedData} />
         </div>
         <div className="flex-1 mx-1">
           <VehicleRatings
