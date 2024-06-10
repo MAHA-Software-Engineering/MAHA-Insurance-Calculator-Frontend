@@ -43,7 +43,7 @@ export default function VehicleForm({ fetchData }) {
   return (
     <div className="max-w-screen-md">
       <div className="mb-2 text-lg font-semibold text-center">
-        Rating Information
+        Vehicle Parameters
       </div>
       <SelectInput
         options={YEARS}
@@ -73,7 +73,7 @@ export default function VehicleForm({ fetchData }) {
         className="bg-[#832C31] hover:bg-[#42191b] text-white font-bold py-2 px-4 rounded mt-5 block w-full"
         data-testid="fetch-data-button"
       >
-        Fetch Data
+        Get Vehicle Information
       </button>
     </div>
   );
