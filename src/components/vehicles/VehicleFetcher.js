@@ -148,12 +148,12 @@ export default function VehicleFetcher() {
   ]);
 
   return (
-    <div className="flex flex-col text-black bg-white rounded">
-      <div className="text-[#832C31] text-lg font-bold my-5 text-center">
+    <div className="flex flex-col py-5 text-black bg-white rounded">
+      <div className="text-[#832C31] text-lg font-bold text-center">
         Get Vehicle Information
       </div>
-      <div className="flex flex-col lg:flex-row">
-        <div className="flex-col items-center flex-1 w-full px-1">
+      <div className="flex flex-col mx-2 md:flex-row">
+        <div className="flex-col items-center w-full max-w-md mx-auto md:flex-1">
           <VehicleForm fetchData={fetchData} />
           <div className="mt-4">
             <div className="font-bold text-center">
@@ -171,13 +171,11 @@ export default function VehicleFetcher() {
             </div>
           )}
         </div>
-        <div className="flex-1 mx-1">
+        <div className="flex flex-col w-full mx-0 md:ml-2 md:flex-1">
           <VehicleRatings
             ratings={data.ratings}
             onSelectCar={handleSelectCar}
           />
-        </div>
-        <div className="flex-1 mx-1">
           <VehicleRecalls
             recalls={data.recalls}
             activeRecallTab={activeRecallTab}

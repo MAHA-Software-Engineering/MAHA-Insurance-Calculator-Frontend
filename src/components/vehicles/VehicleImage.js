@@ -6,7 +6,7 @@ const VehicleImage = ({ scrapedData }) => {
 
   return (
     scrapedData.imageUrl && (
-      <div className="flex justify-center">
+      <div className="flex justify-center my-3">
         <div
           className="image-hover-wrapper "
           onMouseEnter={() => setIsHovered(true)}

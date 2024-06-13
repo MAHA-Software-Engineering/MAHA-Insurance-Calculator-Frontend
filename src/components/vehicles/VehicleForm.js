@@ -42,7 +42,7 @@ export default function VehicleForm({ fetchData }) {
 
   return (
     <div className="max-w-screen-md">
-      <div className="mb-2 text-lg font-semibold text-center">
+      <div className="mt-2 text-lg font-semibold text-center">
         Vehicle Parameters
       </div>
       <SelectInput

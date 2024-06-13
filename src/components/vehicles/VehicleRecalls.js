@@ -25,7 +25,7 @@ const VehicleRecalls = ({ recalls, handleRecallTabChange }) => {
 
   return (
     <>
-      <div className="mb-2 text-lg font-semibold text-center">
+      <div className="mt-2 text-lg font-semibold text-center">
         Recall Details
       </div>
       {recalls.length > 0 ? (
