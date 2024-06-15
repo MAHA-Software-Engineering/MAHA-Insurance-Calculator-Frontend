@@ -84,6 +84,7 @@ export default function VehicleFetcher() {
       if (!isProduction) {
         console.error("Error fetching data from second API.", error);
       }
+      setScrapedData({ imageUrl: "", linkUrl: "" });
     }
 
     setIsLoading(false);

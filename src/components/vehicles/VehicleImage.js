@@ -3,15 +3,16 @@ import React, { useState } from "react";
 
 const VehicleImage = ({ scrapedData }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const hasImage = Boolean(scrapedData.imageUrl);
 
   return (
-    scrapedData.imageUrl && (
-      <div className="flex justify-center my-3">
-        <div
-          className="image-hover-wrapper "
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
+    <div className="flex justify-center my-3">
+      <div
+        className="image-hover-wrapper"
+        onMouseEnter={() => hasImage && setIsHovered(true)}
+        onMouseLeave={() => hasImage && setIsHovered(false)}
+      >
+        {hasImage ? (
           <a
             href={scrapedData.linkUrl}
             target="_blank"
@@ -27,9 +28,15 @@ const VehicleImage = ({ scrapedData }) => {
               <div className="image-hover-text">Click to see cars for sale</div>
             )}
           </a>
-        </div>
+        ) : (
+          <img
+            src="Placeholder.png"
+            alt="Car"
+            className="max-h-[300px] object-cover rounded shadow cursor-default"
+          />
+        )}
       </div>
-    )
+    </div>
   );
 };
 
